@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>New game</h2>
+<form method="post" action="/game">
+	<!--input type="text" name="id" placeholder="Game name"-->
+	<input type="range" name="n" min="1" max="10" value="4">
+	<input type="submit">
+</form>
+</body>
+</html>
+{% endblock %}

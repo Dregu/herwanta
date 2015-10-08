@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block content %}
+<script>
+var score = {{ JSON.stringify(game.score) }};
+</script>
+<div id="board">
+	<div class="kela"></div>
+	<div class="cancel">Peruuta</div>
+</div>
+{% endblock %}
