@@ -44,7 +44,7 @@ function* show(id) {
 	var game = games[id];
 	if (!game) {
 		game = {
-			id: newId(),
+			id: id,
 			score: [10, 10, 10, 10]
 		};
 		games[game.id] = game;
