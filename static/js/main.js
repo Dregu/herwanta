@@ -83,7 +83,7 @@ $(function () {
 			return false;
 		}
 	});
-	var socket = new WebSocket(window.location.href.replace(/^http/, 'ws'));
+	var socket = new ReconnectingWebSocket(window.location.href.replace(/^http/, 'ws'));
 	socket.onmessage = function (e) {
 		score = JSON.parse(e.data);
 		updateScore();
