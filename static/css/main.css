@@ -102,3 +102,40 @@ html,
   right: 0;
   border-top-left-radius: 50px;
 }
+.log {
+  font-size: 20px;
+  line-height: 20px;
+  height: auto;
+  max-height: 50%;
+  width: 50%;
+  overflow: hidden;
+  color: #000;
+  position: absolute;
+  pointer-events: none;
+  padding: 5px;
+}
+.log[data-i="0"] {
+  color: white;
+  top: 0;
+  left: 0;
+}
+.log[data-i="1"] {
+  top: 0;
+  right: 0;
+}
+.log[data-i="2"] {
+  bottom: 0;
+  left: 0;
+}
+.log[data-i="3"] {
+  bottom: 0;
+  right: 0;
+}
+.num {
+  display: inline-block;
+  vertical-align: middle;
+}
+.num.last {
+  font-weight: bold;
+  font-size: 133%;
+}

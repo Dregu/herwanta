@@ -15,18 +15,33 @@ $(function() {
     text = text.replace(/^0½$/, '½');
     $('#board').append('<div class="player" data-i="' + i +
       '" style="background: ' + colors[i] + '">' + text + '</div>');
-    $('#board').append('<div class="fail" data-i="' + i + '">½</div>');
+    $('#board').append('<div class="fail" data-i="' + i + '">-½</div>');
+    $('#board').append('<div class="log" data-i="' + i + '"></div>');
   }
 
   function updateScore() {
+    $('.player').css('-webkit-text-stroke-color', 'black');
+    $('.num').removeClass('last');
     for (var i = 0; i < $('.player').length; i++) {
       var color = '#efef66';
-      if (parseFloat($($('.player')[i]).text().replace(/½/, '.5')) < score[i]) {
-        $($('.player')[i]).css({ color: 'limegreen' }).stop().animate({ color: '#efef66' },
-          3000);
-      } else if (parseFloat($($('.player')[i]).text().replace(/½/, '.5')) > score[i]) {
+      var delta = score[i] - parseFloat($($('.player')[i]).text().replace(
+        /½/, '.5'));
+      if (delta != 0) {
+        if (delta > 0) delta = '+' + delta;
+        $('.log[data-i=' + i + ']').append('<span class="num last">' +
+          delta +
+          '</span>');
+      }
+      if (parseFloat($($('.player')[i]).text().replace(/½/, '.5')) < score[
+          i]) {
+        $($('.player')[i]).css({ color: 'green' }).stop().animate({ color: '#efef66' },
+          5000);
+        $($('.player')[i]).css('-webkit-text-stroke-color', 'limegreen')
+      } else if (parseFloat($($('.player')[i]).text().replace(/½/, '.5')) >
+        score[i]) {
         $($('.player')[i]).css({ color: 'orangered' }).stop().animate({ color: '#efef66' },
-          3000);
+          5000);
+        $($('.player')[i]).css('-webkit-text-stroke-color', 'red')
       }
       var text = score[i].toString();
       text = text.replace(/\.5/g, '½');
