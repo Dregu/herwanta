@@ -170,11 +170,11 @@ $(function() {
   });
   rez();
   $('.player, #board, .fail').disableSelection();
-  if (window.location.hash != '#½') {
+  if (decodeURIComponent(window.location.hash) != '#½') {
     $('.fail').hide();
   }
   $(window).on('hashchange', function() {
-    if (window.location.hash != '#½') {
+    if (decodeURIComponent(window.location.hash) != '#½') {
       $('.fail').hide();
     } else {
       $('.fail').show();
