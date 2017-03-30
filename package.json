@@ -1,17 +1,18 @@
 {
   "name": "herwanta",
   "description": "Herwantapelin pistetaulu",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "repository": "https://github.com/dregu/herwanta",
   "dependencies": {
-    "alea": "latest",
-    "co-body": "latest",
-    "co-views": "latest",
-    "koa": "latest",
-    "koa-route": "latest",
-    "koa-static": "latest",
-    "koa-websocket": "latest",
-    "swig": "latest"
+    "alea": "0.0.9",
+    "co-body": "4.0.0",
+    "co-views": "2.1.0",
+    "koa": "1.1.2",
+    "koa-route": "2.4.2",
+    "koa-static": "1.5.2",
+    "koa-websocket": "1.1.0",
+    "swig": "1.4.2"
   }
 }
+
