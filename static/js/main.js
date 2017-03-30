@@ -21,10 +21,10 @@ $(function() {
   function updateScore() {
     for (var i = 0; i < $('.player').length; i++) {
       var color = '#efef66';
-      if (parseInt($($('.player')[i]).text()) < score[i]) {
+      if (parseFloat($($('.player')[i]).text().replace(/½/, '.5')) < score[i]) {
         $($('.player')[i]).css({ color: 'limegreen' }).stop().animate({ color: '#efef66' },
           3000);
-      } else if (parseInt($($('.player')[i]).text()) > score[i]) {
+      } else if (parseFloat($($('.player')[i]).text().replace(/½/, '.5')) > score[i]) {
         $($('.player')[i]).css({ color: 'orangered' }).stop().animate({ color: '#efef66' },
           3000);
       }
